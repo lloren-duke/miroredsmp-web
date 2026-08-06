@@ -3,89 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiroredSMP - Official Website</title>
+    <title>MiroredSMP - Official Store</title>
     <style>
         /* Desain Tampilan (CSS) */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212; /* Warna latar gelap */
+            background-color: #121212;
             color: #ffffff;
             text-align: center;
         }
         .hero {
-            padding: 120px 20px;
+            padding: 80px 20px 40px;
             background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            border-bottom: 4px solid #ff4757; /* Aksen garis merah */
+            border-bottom: 2px solid #ff4757;
         }
         h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            color: #ff4757; /* Warna teks judul MiroredSMP */
+            font-size: 3em;
+            margin-bottom: 5px;
+            color: #ff4757;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
-        p {
-            font-size: 1.2em;
-            color: #cccccc;
-        }
+        p { font-size: 1.1em; color: #cccccc; margin-bottom: 20px; }
+        
         .ip-box {
             background-color: #2f3542;
             display: inline-block;
-            padding: 20px 40px;
+            padding: 15px 30px;
             border-radius: 10px;
-            margin-top: 30px;
+            margin-top: 10px;
             border: 1px solid #57606f;
-            box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
         }
-        .ip-text {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #1dd1a1; /* Warna teks IP hijau neon */
-            letter-spacing: 1px;
-        }
+        .ip-text { font-size: 1.5em; font-weight: bold; color: #1dd1a1; }
+        
         .btn {
             background-color: #ff4757;
             color: white;
             border: none;
-            padding: 12px 25px;
-            margin-top: 20px;
-            font-size: 1.1em;
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-size: 1em;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 6px;
+            border-radius: 5px;
             transition: 0.3s;
         }
-        .btn:hover {
-            background-color: #ff6b81; /* Warna tombol saat disentuh */
-            transform: translateY(-2px);
+        .btn:hover { background-color: #ff6b81; transform: translateY(-2px); }
+
+        /* Desain Bagian Toko/Store */
+        .store-section {
+            padding: 50px 20px;
         }
+        .store-title {
+            font-size: 2.2em;
+            color: #f1c40f; /* Warna emas untuk judul toko */
+            margin-bottom: 30px;
+        }
+        .catalog {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+        .card:hover {
+            border-color: #ff4757;
+            box-shadow: 0px 8px 25px rgba(255, 71, 87, 0.3);
+            transform: translateY(-5px);
+        }
+        .card h3 { color: #1dd1a1; font-size: 1.8em; margin-top: 0; }
+        .card .price { font-size: 1.4em; color: #f1c40f; font-weight: bold; margin-bottom: 15px; }
+        .card ul { text-align: left; color: #bbb; margin-bottom: 20px; line-height: 1.6; }
+        .buy-btn {
+            background-color: #3742fa;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .buy-btn:hover { background-color: #5352ed; }
     </style>
 </head>
 <body>
 
-    <!-- Bagian Utama Web (HTML) -->
+    <!-- Bagian Atas (Hero) -->
     <div class="hero">
         <h1>MiroredSMP</h1>
-        <p>Server Survival Multiplayer Terbaik untuk Java & Bedrock Edition!</p>
-        
+        <p>Official Store & Donation Portal</p>
         <div class="ip-box">
-            <p style="margin: 0 0 10px 0; font-size: 1em;">Alamat IP Server:</p>
+            <p style="margin: 0 0 5px 0; font-size: 0.9em;">Server IP (Java & Bedrock):</p>
             <div class="ip-text" id="serverIP">miroredsmp.my.id</div>
-            <p style="font-size: 0.9em; margin-top: 10px; color: #a4b0be;">Port Bedrock: 2045</p>
-            
-            <button class="btn" onclick="copyIP()">Salin IP Server</button>
+            <p style="font-size: 0.8em; margin-top: 5px; color: #a4b0be;">Port: 2045</p>
+            <button class="btn" onclick="copyIP()">Salin IP</button>
         </div>
     </div>
 
-    <!-- Fitur Fungsi Tombol (JavaScript) -->
+    <!-- Bagian Etalase Toko -->
+    <div class="store-section">
+        <h2 class="store-title">💎 Pilihan Paket VIP 💎</h2>
+        <div class="catalog">
+            
+            <!-- Paket 1 -->
+            <div class="card">
+                <h3>VIP Iron</h3>
+                <div class="price">Rp 15.000 / Bulan</div>
+                <ul>
+                    <li>Prefix [Iron] di Chat</li>
+                    <li>Akses kit harian (Iron)</li>
+                    <li>2x Home Sethome</li>
+                    <li>Bisa join saat server penuh</li>
+                </ul>
+                <a href="#" class="buy-btn">Beli Sekarang</a>
+            </div>
+
+            <!-- Paket 2 -->
+            <div class="card">
+                <h3 style="color: #f1c40f;">VIP Gold</h3>
+                <div class="price">Rp 30.000 / Bulan</div>
+                <ul>
+                    <li>Prefix [Gold] di Chat</li>
+                    <li>Akses kit harian (Gold)</li>
+                    <li>5x Home Sethome</li>
+                    <li>Command /fly (Khusus di claim area)</li>
+                </ul>
+                <a href="#" class="buy-btn">Beli Sekarang</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script Salin IP -->
     <script>
         function copyIP() {
-            var copyText = document.getElementById("serverIP").innerText;
-            navigator.clipboard.writeText(copyText);
-            alert("Berhasil! IP Server (" + copyText + ") sudah disalin. Selamat bermain!");
+            navigator.clipboard.writeText("miroredsmp.my.id");
+            alert("Berhasil! IP miroredsmp.my.id sudah disalin.");
         }
     </script>
 
